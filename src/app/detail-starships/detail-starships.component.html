@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+@if (starship) {
+  <h2>{{ starship.name }}</h2>
+  <p>Modelo: {{ starship.model }}</p>
+  <p>Fabricante: {{ starship.manufacturer }}</p>
+  <p>Coste en créditos: {{ starship.cost_in_credits }}</p>
+  <img [src]="'https://starwars-visualguide.com/assets/img/starships/' + starship.url.split('/').slice(-2, -1)[0] + '.jpg'" alt="{{ starship.name }}" />
+}
+
+</body>
+</html>
