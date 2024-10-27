@@ -9,8 +9,13 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './navegacion.component.scss'
 })
 export class NavegacionComponent {
+isOpen = false;
+
   constructor(private router: Router) {}
   irAStarships() {
     this.router.navigate(['/starships']);
+}
+toggleMenu() {
+  this.isOpen = !this.isOpen;
 }
 }

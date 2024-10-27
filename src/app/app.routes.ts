@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { DetailStarshipsComponent } from './detail-starships/detail-starships.component';
 import { NavegacionComponent } from './navegacion/navegacion.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     { path: '', component: WelcomeComponent },
@@ -15,7 +17,9 @@ export const routes: Routes = [
     { path: '**', redirectTo: 'home' },
     { path: 'ruta1', component: HomeComponent },
     { path: 'ruta2', component: StarshipsComponent},
-    { path: 'ruta3', component: HomeComponent}
+    { path: 'ruta3', component: HomeComponent},
+    { path: 'register', component: RegisterComponent},
+    { path: 'login', component: LoginComponent}
 ];
 
 @NgModule ({

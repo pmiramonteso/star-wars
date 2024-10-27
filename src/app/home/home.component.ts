@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { NavegacionComponent } from '../navegacion/navegacion.component';
 
 @Component({
