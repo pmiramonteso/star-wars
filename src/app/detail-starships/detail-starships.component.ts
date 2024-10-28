@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServicioService } from '../service/servicio.service';
+import { NavegacionComponent } from '../navegacion/navegacion.component';
 
 @Component({
   selector: 'app-detail-starships',
   standalone: true,
-  imports: [],
+  imports: [NavegacionComponent],
   templateUrl: './detail-starships.component.html',
   styleUrl: './detail-starships.component.scss'
 })

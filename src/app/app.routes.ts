@@ -15,9 +15,6 @@ export const routes: Routes = [
     { path: 'starships', component: StarshipsComponent }, //
     { path: 'starship/:id', component: DetailStarshipsComponent },
     { path: '**', redirectTo: 'home' },
-    { path: 'ruta1', component: HomeComponent },
-    { path: 'ruta2', component: StarshipsComponent},
-    { path: 'ruta3', component: HomeComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'login', component: LoginComponent}
 ];

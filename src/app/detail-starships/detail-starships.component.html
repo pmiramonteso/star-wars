@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body class="min-h-screen flex items-center justify-center">
-  
-@if (starship) {
+<body>
+
+  <app-navegacion></app-navegacion>
+
+  <div class="min-h-screen flex items-center justify-center">
+  @if (starship) {
 
   <div class="card lg:card-side bg-black border-2 border-gray-600 shadow-md shadow-white max-w-7xl mx-auto p-8">
     <figure>
@@ -29,6 +32,6 @@
     </div>
   </div>
 }
-
+</div>
 </body>
 </html>
