@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { User } from '../interficie/usuario';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +11,19 @@ export class UserService {
 
 private baseUrl = 'http://localhost:3000';
 
-constructor(private http: HttpClient) {}
 
-register(formValue: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/register`, formValue)
+constructor(private http: HttpClient) {
+
   }
 
-login(formValue: any): Observable<any>{
-  return this.http.post<any>(`${this.baseUrl}/login`, formValue)
+
+register(user: User): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/users`, user)
   }
+
+  login(user: User): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/login`, user);
+}
 
 getProtectedData(): Observable<any> {
   const token = localStorage.getItem('accessToken');
@@ -26,5 +32,8 @@ getProtectedData(): Observable<any> {
   });
   return this.http.get<any>(`${this.baseUrl}/protected`, { headers });
   }
-  
+
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('accessToken'); 
+  }
 }

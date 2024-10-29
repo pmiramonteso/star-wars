@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../service/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,28 +11,42 @@ import { UserService } from '../service/user.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  form: FormGroup;
+  formLogin: FormGroup;
   userService = inject(UserService);
+  isModalOpen: boolean = false;
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
-constructor() {
- this.form = new FormGroup({
+constructor(private fb: FormBuilder) {
+ this.formLogin = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required])
     })
   }
 
-  onSubmit(): void {
-    if (this.form.valid) {
-      this.userService.login(this.form.value).subscribe(
-        (response) => {
-          localStorage.setItem('accessToken', response.accessToken);
-        },
-        (error) => {
-          console.error('Ha habido un error al iniciar el usuario', error);
-        }
-      );
-    } else {
-      console.error('El formulario no es válido');
-    }
+  openModal() {
+    this.isModalOpen = true;
   }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+  Login(): void {
+    if (this.formLogin.valid) {
+        this.userService.login(this.formLogin.value).subscribe(
+            (response) => {
+                localStorage.setItem('accessToken', response.accessToken);
+                localStorage.setItem('username', response.user.name);
+                this.router.navigateByUrl('/starships');
+                console.log('El usuario ha ingresado correctamente');
+            },
+            (error) => {
+                console.error('Ha habido un error al iniciar el usuario', error);
+            }
+        );
+    } else {
+        console.error('El formulario no es válido');
+    }
+}
+
 }

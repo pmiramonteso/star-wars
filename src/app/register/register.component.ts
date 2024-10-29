@@ -17,6 +17,7 @@ import { UserService } from '../service/user.service';
 export class RegisterComponent implements OnInit {
   form: FormGroup;
 
+
   constructor(private userService: UserService) {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -30,10 +31,11 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(): void {
+  Registrarse(): void {
     if (this.form.valid) {
       this.userService.register(this.form.value).subscribe(
         (response) => {
+          localStorage.setItem('accessToken', response.accessToken);
           console.log('Usuario registrado', response);
         },
         (error) => {
