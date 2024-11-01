@@ -6,70 +6,22 @@
       "password": "password123"
     },
     {
-      "email": "pmiramonteso@gmail.com",
-      "password": "$2a$10$UdSnYDFlOcDmtqH69saziur7OU/cmkJXMaWOw/JmDwJrcoUfnr4Ua",
-      "name": "Paola",
-      "id": "2"
-    },
-    {
-      "email": "asd@fasdf.com",
-      "password": "$2a$10$0JpZFKvzLEq60SfFrqHR2..2hr3QbV4pmYXr4D9PHmygXCm0vUn/2",
-      "name": "paola",
-      "id": "3"
-    },
-    {
-      "email": "ana@gmail.com",
-      "password": "$2a$10$marfAg5vKzr47zBHK9lgp.ytQlyBEQ/v6yknXo4c6ISIltA7cNxh2",
-      "name": "ana",
-      "id": "4"
-    },
-    {
       "id": "8559",
       "name": "pablo",
       "email": "pablo@gmail.com",
       "password": "Pitbull13"
     },
     {
-      "id": "5f83",
-      "name": "Mario",
-      "email": "mario@gmail.com",
-      "password": "Mario1990"
-    },
-    {
-      "id": "1e56",
-      "name": "daniela",
-      "email": "dani@gmail.com",
-      "password": "dani1990"
-    },
-    {
-      "id": "3ca2",
-      "name": "ji",
       "email": "ji@ji.com",
-      "password": "$2a$10$uYhbs6YGDXdH0ItCEV1dIeZulpB3RsI7ZMHpHIhqAT89b6ZWSl2d."
+      "password": "$2a$10$Kzabw4iZZVJyXYO3NteAne5gUVjI/rwszsnlDVVSF3H0/4ksAUtEi",
+      "name": "Paola",
+      "id": "BwdxehL"
     },
     {
-      "id": "2426",
-      "name": "lolo",
-      "email": "lolo@lolo.com",
-      "password": "$2a$10$sT64yGhMqX9/G0QOAvmaR.0oVkwGoPNeu4HS.Ga7lZDJ3kNmbHuS6"
-    },
-    {
-      "id": "1bd6",
-      "name": "aaa",
-      "email": "aaa@aaa.com",
-      "password": "12345678"
-    },
-    {
-      "email": "momo@momo.com",
-      "password": "$2a$10$KzCCVI/SBoeAC.IZcWBu8Oj84fG1IVcrO53OSGONGWuOTnmddxEGW",
-      "name": "momo",
-      "id": "cHxHAvr"
-    },
-    {
-      "email": "prueba@momo.com",
-      "password": "$2a$10$kBNSDRGshov0/D1wQ0L31OlLqUd.M7sg4HzyT6AZPdCKsZHA3wEj.",
-      "name": "prueba",
-      "id": "fT-iD6V"
+      "email": "pmiramonteso@gmail.com",
+      "password": "$2a$10$Vp7pi0si5lAZn60ewFbTJuh9cwKPBV7zI/ZumMh0AwZXJiGOJltwu",
+      "name": "Paola",
+      "id": "22vtMd9"
     }
   ]
 }

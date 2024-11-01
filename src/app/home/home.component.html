@@ -13,20 +13,54 @@
     <div class="carousel max-w-5xl h-auto mx-auto mt-8 rounded-lg overflow-hidden shadow-lg">
       
         <div id="slide1" class="carousel-item relative w-full h-full">
+
             <img src="/assets/img/lego.jpg" class="w-full h-full object-cover" />
+
             <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide4" class="btn btn-circle" (click)="navigateToSlide($event, 'slide4')">❮</a>
             <a href="#slide2" class="btn btn-circle" (click)="navigateToSlide($event, 'slide2')">❯</a>
             </div>
+
+            <div class="absolute top-14 left-10 max-w-sm text-white p-4 bg-opacity-40 rounded-lg text-left">
+              <img src="/assets/img/lego.png" alt="logo-lego"class="logo-small">
+              <p class="text-lg" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">
+                Conoce las figuras que tenemos disponibles en nuestra tienda
+              </p>
+              <div class="flex justify-start space-x-4 mt-4">
+                <button class="bg-black border border-yellow-500 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded">
+                  VER TIENDA
+                </button>
+              </div>
+            </div>
         </div>
 
       <div id="slide2" class="carousel-item relative w-full h-full">
+
+        <div class="relative w-full h-full">
         <img src="/assets/img/halloween.jpeg" class="w-full h-full object-cover" />
+        </div>
+
         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <a href="#slide1" class="btn btn-circle" (click)="navigateToSlide($event, 'slide1')">❮</a>
           <a href="#slide3" class="btn btn-circle" (click)="navigateToSlide($event, 'slide3')">❯</a>
         </div>
-    </div>
+
+        <div class="absolute top-10 left-10 max-w-md text-white p-4 bg-opacity-40 rounded-lg">
+          <h4 class="text-4xl" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">
+            ¿Quieres pasar un Halloween a lo Star Wars?
+          </h4>
+          <div style="height: 20px;"></div>
+          <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">
+            Entra a nuestra guía de compras para disfrutar de una fiesta disfrazado de tu personaje favorito
+          </p>
+
+          <div class="flex space-x-4 mt-4">
+              <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded">
+                  EXPLORAR
+              </button>
+          </div>
+        </div>
+      </div>
 
       <div id="slide3" class="carousel-item relative w-full h-full">
 
@@ -41,7 +75,7 @@
         </div>
 
         <div class="absolute top-20 left-10 max-w-md text-white p-4 bg-opacity-40 rounded-lg">
-            <p class="text-lg italic"style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Mira el primer trailer de *Skeleton Crew*, luego disfruta de la aventura a partir del 3 de diciembre</p>
+            <p class="text-lg"style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">Mira el primer trailer de <i>Skeleton Crew</i>, luego disfruta de la aventura a partir del 3 de diciembre</p>
             <div class="flex space-x-4 mt-4">
                 <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded">
                     MIRAR TRAILER
@@ -54,11 +88,33 @@
     </div>
 
       <div id="slide4" class="carousel-item relative w-full h-full">
+
+        <div class="relative w-full h-full">
         <img src="/assets/img/navidad.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black via-transparent to-transparent opacity-90"></div>
+        </div>
+
         <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <a href="#slide3" class="btn btn-circle" (click)="navigateToSlide($event, 'slide3')">❮</a>
           <a href="#slide1" class="btn btn-circle" (click)="navigateToSlide($event, 'slide1')">❯</a>
         </div>
+
+        <div class="absolute top-14 left-10 max-w-sm text-white p-4 bg-opacity-40 rounded-lg text-left">
+          <h4 class="text-4xl mb-1" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">
+            Yoda lo sabe
+          </h4>
+          <p class="text-lg" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);">
+            Se acerca la Navidad y tienes que ir pensando en los regalos galácticos
+          </p>
+          <div class="flex justify-start space-x-4 mt-4">
+            <button class="bg-black border border-yellow-500 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded">
+              MIRAR REGALOS
+            </button>
+          </div>
+        </div>
+        
+        
+
       </div>
     
     </div>

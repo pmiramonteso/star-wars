@@ -6,6 +6,8 @@ import { StarshipsComponent } from './starships/starships.component';
 import { DetailStarshipsComponent } from './detail-starships/detail-starships.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { PilotosComponent } from './pilotos/pilotos.component';
+import { FilmsComponent } from './films/films.component';
 import { authGuard } from './guards/auth.guard';
 
 
@@ -16,6 +18,8 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'starships', component: StarshipsComponent, canActivate: [authGuard] },
     { path: 'starship/:id', component: DetailStarshipsComponent, canActivate: [authGuard]},
+    { path: 'pilotos', component: PilotosComponent },
+    { path: 'films', component: FilmsComponent },
     { path: '**', redirectTo: '' }
 ];
 

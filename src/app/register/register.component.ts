@@ -6,17 +6,18 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserService } from '../service/user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
-
+  isDarkMode = true;
 
   constructor(private userService: UserService) {
     this.form = new FormGroup({

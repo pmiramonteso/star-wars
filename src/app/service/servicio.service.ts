@@ -7,11 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class ServicioService {
   private urlAPI = 'https://swapi.dev/api/starships/';
+  private urlPilotos = 'https://swapi.dev/api/people/';
 
   constructor(private http: HttpClient) { }
 
   obtenerStarship(page: number = 1): Observable<any> {
     return this.http.get(`${this.urlAPI}?page=${page}`);
+  }
+
+  obtenerPilotos(): Observable<any> {
+  return this.http.get(`${this.urlPilotos}`)
   }
 
   obtenerDetalle(id: number): Observable<any> {

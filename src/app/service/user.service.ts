@@ -13,15 +13,13 @@ private baseUrl = 'http://localhost:3000';
 
 
 constructor(private http: HttpClient) {
-
-  }
-
+}
 
 register(user: User): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/users`, user)
-  }
+}
 
-  login(user: User): Observable<any> {
+login(user: User): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, user);
 }
 

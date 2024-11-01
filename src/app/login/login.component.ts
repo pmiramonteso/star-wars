@@ -2,20 +2,24 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../service/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
   formLogin: FormGroup;
   userService = inject(UserService);
   isModalOpen: boolean = false;
   private router = inject(Router);
   private route = inject(ActivatedRoute);
+  isDarkMode = true;
 
 constructor(private fb: FormBuilder) {
  this.formLogin = this.fb.group({
@@ -23,7 +27,7 @@ constructor(private fb: FormBuilder) {
       password: new FormControl('', [Validators.required])
     })
   }
-
+ 
   openModal() {
     this.isModalOpen = true;
   }

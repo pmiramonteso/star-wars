@@ -12,6 +12,7 @@ export class NavegacionComponent {
   isAuthenticated: boolean = false;
   username: string | null = null;
   isOpen = false;
+  
 
   constructor(private router: Router) {}
   irAStarships() {
