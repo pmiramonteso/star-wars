@@ -6,21 +6,25 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServicioService {
-  private urlAPI = 'https://swapi.dev/api/starships/';
-  private urlPilotos = 'https://swapi.dev/api/people/';
+  private urlAPI = 'https://swapi.dev/api';
 
   constructor(private http: HttpClient) { }
 
   obtenerStarship(page: number = 1): Observable<any> {
-    return this.http.get(`${this.urlAPI}?page=${page}`);
-  }
-
-  obtenerPilotos(): Observable<any> {
-  return this.http.get(`${this.urlPilotos}`)
+    return this.http.get(`${this.urlAPI}/starships/?page=${page}`);
+    
   }
 
   obtenerDetalle(id: number): Observable<any> {
-    return this.http.get(`${this.urlAPI}${id}/`);
+    return this.http.get(`${this.urlAPI}/starships/${id}/`);
+  }
+
+  obtenerPiloto(url: string): Observable<any> {
+    return this.http.get(url);
+  }
+
+  obtenerPelicula(url: string): Observable<any> {
+    return this.http.get(url);
   }
 }
 

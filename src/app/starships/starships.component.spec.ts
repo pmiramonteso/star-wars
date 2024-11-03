@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { StarshipsComponent } from './starships.component';
+import { ServicioService } from '../service/servicio.service';
+import { ActivatedRoute } from '@angular/router';
 
 describe('StarshipsComponent', () => {
   let component: StarshipsComponent;
@@ -8,7 +10,23 @@ describe('StarshipsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StarshipsComponent]
+      imports: [
+        StarshipsComponent,
+        HttpClientTestingModule 
+      ],
+      providers: [
+        ServicioService,
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get: () => null
+              }
+            }
+          }
+        }
+      ]
     })
     .compileComponents();
 
@@ -21,3 +39,4 @@ describe('StarshipsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -10,7 +10,7 @@
   <header>
     <nav class="bg-black border-gray-200 grid grid-cols-3 items-center px-4 lg:px-6 py-4 dark:bg-black">
       
-      <div class="flex space-x-6 col-start-1 items-center ml-4 lg:ml-10">
+      <div class="hidden lg:flex space-x-6 col-start-1 items-center ml-4 lg:ml-10">
         <a href="https://www.facebook.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
           <i class="fab fa-facebook-f"></i>
         </a>
@@ -28,75 +28,87 @@
         </a>
       </div>
 
-      <div class="flex items-center justify-center col-start-2">
+      <div class="flex items-center justify-center lg:col-start-2 sm:col-start-1">
         <a routerLink="/" class="flex items-center">
           <img src="/assets/img/logo-star-wars.png" alt="logo" class="h-40 sm:h-50 object-contain" />
         </a>
       </div>
   
       <button (click)="toggleMenu()"
-       class="text-gray-500 lg:hidden inline-flex items-center justify-end p-2 rounded-lg ml-1 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+       class="text-white lg:hidden inline-flex items-center justify-end col-start-3 p-2 rounded-lg ml-1 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+      <svg class="w-10 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
       </button>
   
       <div class="hidden lg:flex items-center justify-end space-x-4">
         @if(isAuthenticated) {
-          <span class="text-white font-medium rounded-lg text-sm px-4 py-2">{{ username }}</span>
-          <button (click)="logout()" class="text-black bg-yellow-500 hover:bg-yellow-600 rounded-lg text-sm px-4 py-2">
-          Salir
+          <span class="text-white font-medium rounded-lg text-sm px-4 py-2">{{ username?.toUpperCase() }}</span>
+          <button (click)="logout()" class="flex items-center text-white bg-yellow-500 hover:bg-yellow-600 hover:text-white rounded-lg text-sm px-4 py-2 transition duration-200">
+            Salir
+            <i class="fas fa-sign-out-alt ml-2"></i>
           </button>
         } @else {
-        <a routerLink="/login" class="text-white font-medium rounded-lg text-sm px-4 py-2">INGRESAR</a>
-        <a routerLink="/register" class="text-black bg-yellow-500 hover:bg-yellow-600 rounded-lg text-sm px-4 py-2">REGISTRASE</a>
+        <a routerLink="/login" class="text-white font-medium rounded-lg text-sm px-4 py-2 hover:text-yellow-500">INGRESAR</a>
+        <a routerLink="/register" class="text-black bg-yellow-500 hover:bg-white rounded-lg text-sm px-4 py-2">REGISTRARSE</a>
         }
       </div>
-      
     </nav>
 
-    <div role="tablist" class="tabs tabs-lifted justify-center text-white-custom hidden lg:flex border-b-2 border-gray-500">
-      <a routerLink="/home" routerLinkActive="tab-active" class="tab" role="tab">HOME</a>
-      <a routerLink="/starships" routerLinkActive="tab-active" class="tab" role="tab">STARSHIPS</a>
-      <a routerLink="/pilotos" routerLinkActive="tab-active" class="tab" role="tab">PILOTOS</a>
-      <a routerLink="/films" routerLinkActive="tab-active" class="tab" role="tab">PELICULAS</a>
+    <div role="tablist" class="tabs justify-center hidden lg:flex border-b-2 border-gray-500">
+      <a 
+        routerLink="/home" 
+        routerLinkActive="tab-active" 
+        class="tab text-white hover:text-yellow-500 transition duration-300" 
+        role="tab">HOME
+      </a>
+      <div class="w-px h-8 bg-gray-600 mx-2 border border-gray-600"></div> 
+      <a 
+        routerLink="/starships" 
+        routerLinkActive="tab-active" 
+        class="tab text-white hover:text-yellow-500 transition duration-300" 
+        role="tab">STARSHIPS
+      </a>
     </div>
-    
     
     <!--Modal de pequeño-->
-     @if(isOpen) {
-      <div class="lg:hidden bg-black text-white absolute w-full z-10 border-t border-gray-700">
-      <div class="flex flex-col items-center space-y-4 py-4">
-        <a routerLink="/home" class="block text-white">HOME</a>
-        <a routerLink="/starships" class="block text-white">STARSHIPS</a>
-        <a routerLink="/pilotos" class="block text-white">PILOTOS</a>
-        <a routerLink="/films" routerLinkActive="tab-active" class="tab" role="tab">PELICULAS</a>
-
-        
-      <div class="space-y-2 w-full px-4">
-        <a routerLink="/login" class="block text-white bg-gray-700 py-2 rounded-lg text-center">INGRESAR</a>
-        <a routerLink="/register" class="block text-black bg-yellow-500 py-2 rounded-lg text-center">REGISTRARSE</a>
+    @if(isOpen) {
+      <div class="lg:hidden">
+          <div class="overlay active"></div>
+          <div class="bg-black text-white absolute w-full z-10 border-t border-gray-700">
+              <button (click)="toggleMenu()"
+                  class="absolute top-4 right-4 text-white hover:text-yellow-500">
+                  <i class="fas fa-times fa-lg"></i>
+              </button>
+              <div class="flex flex-col items-center space-y-4 py-4">
+                  <a routerLink="/home" class="block text-white">HOME</a>
+                  <a routerLink="/starships" class="block text-white">STARSHIPS</a>
+  
+                  <div class="space-y-2 w-full px-4">
+                      <a routerLink="/login" class="block text-white font-bold bg-gray-700 py-2 rounded-lg text-center">INGRESAR</a>
+                      <a routerLink="/register" class="block text-white font-bold bg-yellow-500  hover:text-black py-2 rounded-lg text-center">REGISTRARSE</a>
+                  </div>
+              </div>
+  
+              <div class="flex space-x-6 mb-10 col-start-1 justify-center items-center ml-4 mt-5 lg:ml-10">
+                  <a href="https://www.facebook.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://www.instagram.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://www.linkedin.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
+                      <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://www.youtube.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
+                      <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="https://www.tiktok.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
+                      <i class="fab fa-tiktok"></i>
+                  </a>
+              </div>
+          </div>
       </div>
-      </div>
-
-      <div class="flex space-x-6 col-start-1 justify-center items-center ml-4 mt-5 lg:ml-10">
-        <a href="https://www.facebook.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://www.youtube.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.tiktok.com" target="_blank" class="text-white hover:text-yellow-500 text-2xl">
-          <i class="fab fa-tiktok"></i>
-        </a>
-      </div>
-
-    </div>
-}
+  }
+  
   </header>
 
   <router-outlet></router-outlet>

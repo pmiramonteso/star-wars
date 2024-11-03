@@ -1,0 +1,55 @@
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .button-animated {
+    position: relative;
+    background-color: #000;
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .button-animated::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: rgba(255, 204, 0, 0.3);
+    transition: all 0.4s ease;
+    opacity: 0;
+    filter: blur(50px);
+    z-index: -1;
+  }
+
+  .button-animated:hover::before {
+    opacity: 1;
+    top: -60%;
+    left: -60%;
+    right: -60%;
+    bottom: -60%;
+  }
+
+  .button-animated:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+
+  .button-animated:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.5);
+  }

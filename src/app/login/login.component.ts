@@ -20,11 +20,12 @@ export class LoginComponent {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   isDarkMode = true;
+  loginError: boolean = false
 
 constructor(private fb: FormBuilder) {
  this.formLogin = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required])
+      password: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
  
@@ -41,11 +42,13 @@ constructor(private fb: FormBuilder) {
             (response) => {
                 localStorage.setItem('accessToken', response.accessToken);
                 localStorage.setItem('username', response.user.name);
-                this.router.navigateByUrl('/starships');
                 console.log('El usuario ha ingresado correctamente');
+                const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/home';
+                this.router.navigate([returnUrl]);
             },
             (error) => {
                 console.error('Ha habido un error al iniciar el usuario', error);
+                this.loginError = true;
             }
         );
     } else {

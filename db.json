@@ -1,27 +1,10 @@
 {
   "users": [
     {
-      "id": "1",
-      "email": "paola@gmail.com",
-      "password": "password123"
-    },
-    {
-      "id": "8559",
-      "name": "pablo",
-      "email": "pablo@gmail.com",
-      "password": "Pitbull13"
-    },
-    {
-      "email": "ji@ji.com",
-      "password": "$2a$10$Kzabw4iZZVJyXYO3NteAne5gUVjI/rwszsnlDVVSF3H0/4ksAUtEi",
-      "name": "Paola",
-      "id": "BwdxehL"
-    },
-    {
       "email": "pmiramonteso@gmail.com",
-      "password": "$2a$10$Vp7pi0si5lAZn60ewFbTJuh9cwKPBV7zI/ZumMh0AwZXJiGOJltwu",
-      "name": "Paola",
-      "id": "22vtMd9"
+      "password": "$2a$10$nhq8wWQ.z/FndqK8pJ4sqeUqsgspdc.NN11MQV/Lq01HDFK0fboGG",
+      "name": "Ana Paola",
+      "id": 1
     }
   ]
 }

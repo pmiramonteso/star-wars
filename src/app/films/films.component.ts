@@ -1,33 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ServicioService } from '../service/servicio.service';
-import { Router } from '@angular/router';
-import { Films } from '../interficie/films';
-import { NavegacionComponent } from '../navegacion/navegacion.component';
 
 @Component({
   selector: 'app-films',
   standalone: true,
-  imports: [NavegacionComponent],
   templateUrl: './films.component.html',
-  styleUrl: './films.component.scss'
+  styleUrls: ['./films.component.scss']
 })
-export class FilmsComponent {
-  films: Films[] = [];
+export class FilmsComponent implements OnInit, OnChanges {
+  @Input() filmsUrls: string[] = [];
+  peliculas: any[] = [];
 
-  constructor(private servicioService: ServicioService, private router: Router) {
-  }
+  constructor(private servicioService: ServicioService) {}
 
   ngOnInit(): void {
-    this.cargarFilms();
-  }
-  cargarFilms(): void {
-    this.servicioService.obtenerPilotos().subscribe(data => {
-      this.films = [...this.films, ...data.results];
-    });
+    if (this.filmsUrls.length) {
+      this.cargarPeliculas();
+    }
   }
 
-  verDetalles(url: string): void {
-    const id = url.split('/').slice(-2, -1)[0];
-    this.router.navigate(['/films', id]);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['filmsUrls'] && this.filmsUrls.length) {
+      this.cargarPeliculas();
+    }
+  }
+
+  cargarPeliculas(): void {
+    this.peliculas = [];
+    this.filmsUrls.forEach(url => {
+      this.servicioService.obtenerPelicula(url).subscribe(data => {
+        this.peliculas.push(data);
+      }, error => {
+        console.error('Error al cargar una película:', error);
+      });
+    });
   }
 }

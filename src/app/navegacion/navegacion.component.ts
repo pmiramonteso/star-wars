@@ -36,6 +36,6 @@ logout() {
   localStorage.removeItem('username');
   this.isAuthenticated = false;
   this.username = null;
-  this.router.navigate(['/login']);
+  this.router.navigate(['/home']);
 }
 }

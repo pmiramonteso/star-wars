@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-<app-navegacion></app-navegacion>
-  <div class="min-h-screen flex items-center justify-center">
-  @if (starship) {
-
-  <div class="card lg:card-side bg-black border-2 border-gray-600 shadow-md shadow-white max-w-7xl mx-auto p-8">
-    <figure>
-      <img [src]="'https://starwars-visualguide.com/assets/img/starships/' + starship.url.split('/').slice(-2, -1)[0] + '.jpg'" alt="{{ starship.name }}" />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title text-3xl">{{ starship.name }}</h2>
-      <br>
-      <p><strong>Modelo: </strong>{{ starship.model }}</p>
-      <p><strong>Fabricante: </strong>{{ starship.manufacturer }}</p>
-      <p><strong>Coste en créditos: </strong>{{ starship.cost_in_credits }}</p>
-      <p><strong>Longitud: </strong>{{ starship.length }}</p>
-      <p><strong>Tripulación: </strong>{{ starship.crew }}</p>
-      <p><strong>Velocidad atmosférica: </strong>{{ starship.max_atmosphering_speed }}</p>
-      <br>
-      <div class="card-actions justify-end">
-        <button class="btn bg-transparent border-2 border-cyan-700 text-white hover:text-black hover:border-cyan-700">Más detalles</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starship Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <app-navegacion></app-navegacion>
+    <div class="min-h-screen">
+      @if (starship) {
+      <div
+        class="w-full max-w-7xl mx-auto p-8 flex justify-center items-center"
+      >
+        <div class="card lg:card-side bg-black shadow-md shadow-white">
+          <figure>
+            <img
+              [src]="imageUrl"
+              alt="img-de-nave"
+              class="@if (imageUrl === backupImageUrl) { w-1/2 mx-auto } @else { w-full h-auto }"
+              (load)="onImageLoad()"
+              (error)="onImageError()"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title text-3xl uppercase">{{ starship.name }}</h2>
+            <br />
+            <p><strong>Modelo: </strong>{{ starship.model }}</p>
+            <p><strong>Fabricante: </strong>{{ starship.manufacturer }}</p>
+            <p>
+              <strong>Coste en créditos: </strong>{{ starship.cost_in_credits }}
+            </p>
+            <p><strong>Longitud: </strong>{{ starship.length }}</p>
+            <p><strong>Tripulación: </strong>{{ starship.crew }}</p>
+            <p>
+              <strong>Velocidad atmosférica: </strong
+              >{{ starship.max_atmosphering_speed }}
+            </p>
+            <br />
+          </div>
+        </div>
       </div>
+      }
+      <app-pilotos [pilotosUrls]="pilotosUrls"></app-pilotos>
+      <app-films [filmsUrls]="filmsUrls"></app-films>
     </div>
-  </div>
-}
-</div>
-</body>
+    <app-footer></app-footer>
+  </body>
 </html>

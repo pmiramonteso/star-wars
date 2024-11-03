@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { User } from '../interficie/usuario';
 
 
@@ -34,4 +34,8 @@ getProtectedData(): Observable<any> {
   isAuthenticated(): boolean {
     return !!localStorage.getItem('accessToken'); 
   }
+  checkEmail(email: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/users?email=${email}`);
+  }
+  
 }
