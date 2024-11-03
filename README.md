@@ -84,3 +84,7 @@ ng build --prod
 
 ##  🤝 Contribuciones
 Si deseas colaborar en este proyecto o informar sobre problemas, no dudes en crear un "issue" o enviar un "pull request".
+
+![image](https://github.com/user-attachments/assets/d3e049c5-efe8-403f-9562-d43152a8959f)
+![image](https://github.com/user-attachments/assets/586cf62b-0481-489d-b768-8dfdfbac9423)
+
