@@ -37,15 +37,12 @@ npm install -g @angular/cli
 
 ## 🛠️ Instalación
 ✔️ Paso 1: Clona el repositorio:
-bash
 git clone https://github.com/pmiramonteso/star-wars.git
 
 ✔️ Paso 2: Ingresa al directorio del proyecto:
-bash
 cd star-wars
 
 ✔️ Paso 3: Instala las dependencias:
-bash
 npm install
 
 ✔️ Paso 4: Crea el archivo db.json con el siguiente contenido:
@@ -55,14 +52,11 @@ json
 }
 
 ✔️ Paso 5: Levanta el servidor de backend utilizando uno de los siguientes comandos:
-bash
 npx json-server-auth db.json
 o
-bash
 npm run start:server
 
 ✔️ Paso 6: Levanta la aplicación Angular:
-bash
 ng serve
 
 ##  🔍 Ejecución
