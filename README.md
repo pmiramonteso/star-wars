@@ -66,12 +66,13 @@ npm run start:server
 bash
 ng serve
 
-Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-▶️ Ejecución
+🔍 Ejecución
 Ejecuta la aplicación en tu navegador accediendo a http://localhost:4200.
+
+🧪 Ejecutando Pruebas
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
+bash
+ng test
 
 🌐 Despliegue
 Para desplegar la aplicación en producción, sigue estos pasos:
@@ -84,8 +85,5 @@ ng build --prod
 
 🤝 Contribuciones
 Si deseas colaborar en este proyecto o informar sobre problemas, no dudes en crear un "issue" o enviar un "pull request".
-
-
-
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
