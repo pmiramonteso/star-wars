@@ -33,7 +33,6 @@ Este proyecto frontend se integra con la API [SWAPI](https://swapi.dev/documenta
 - Node.js y npm instalados en tu sistema. Puedes descargarlos desde [nodejs.org](https://nodejs.org/).
 - Angular CLI instalado globalmente. Puedes instalarlo con el siguiente comando:
 
-bash
 npm install -g @angular/cli
 
 ## 🛠️ Instalación
@@ -66,15 +65,15 @@ npm run start:server
 bash
 ng serve
 
-🔍 Ejecución
+##  🔍 Ejecución
 Ejecuta la aplicación en tu navegador accediendo a http://localhost:4200.
 
-🧪 Ejecutando Pruebas
+##  🧪 Ejecutando Pruebas
 Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
 bash
 ng test
 
-🌐 Despliegue
+##  🌐 Despliegue
 Para desplegar la aplicación en producción, sigue estos pasos:
 
 ✔️ Paso 1: Ejecuta el comando de construcción para compilar la aplicación Angular:
@@ -83,7 +82,7 @@ ng build --prod
 
 ✔️ Paso 2: Los archivos generados se almacenarán en el directorio dist/. Puedes desplegar estos archivos en un servidor web o en un servicio de alojamiento que admita aplicaciones web estáticas.
 
-🤝 Contribuciones
+##  🤝 Contribuciones
 Si deseas colaborar en este proyecto o informar sobre problemas, no dudes en crear un "issue" o enviar un "pull request".
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
