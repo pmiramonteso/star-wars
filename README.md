@@ -33,7 +33,7 @@ Este proyecto frontend se integra con la API [SWAPI](https://swapi.dev/documenta
 - Node.js y npm instalados en tu sistema. Puedes descargarlos desde [nodejs.org](https://nodejs.org/).
 - Angular CLI instalado globalmente. Puedes instalarlo con el siguiente comando:
 
-```bash
+bash
 npm install -g @angular/cli
 
 ## 🛠️ Instalación
