@@ -66,14 +66,14 @@ npm run start:server
 bash
 ng serve
 
-## Running unit tests
+Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## ▶️ Ejecución
+▶️ Ejecución
 Ejecuta la aplicación en tu navegador accediendo a http://localhost:4200.
 
-## 🌐 Despliegue
+🌐 Despliegue
 Para desplegar la aplicación en producción, sigue estos pasos:
 
 ✔️ Paso 1: Ejecuta el comando de construcción para compilar la aplicación Angular:
