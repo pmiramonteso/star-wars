@@ -45,18 +45,10 @@ cd star-wars
 ✔️ Paso 3: Instala las dependencias:
 npm install
 
-✔️ Paso 4: Crea el archivo db.json con el siguiente contenido:
-json
-{
-  "users": []
-}
-
-✔️ Paso 5: Levanta el servidor de backend utilizando uno de los siguientes comandos:
+✔️ Paso 4: Levanta el servidor de backend utilizando uno de los siguientes comandos:
 npx json-server-auth db.json
-o
-npm run start:server
 
-✔️ Paso 6: Levanta la aplicación Angular:
+✔️ Paso 5: Levanta la aplicación Angular:
 ng serve
 
 ##  🔍 Ejecución
