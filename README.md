@@ -56,7 +56,6 @@ Ejecuta la aplicación en tu navegador accediendo a http://localhost:4200.
 
 ##  🧪 Ejecutando Pruebas
 Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
-bash
 ng test
 
 ##  🌐 Despliegue
